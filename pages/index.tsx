@@ -100,7 +100,7 @@ const Home: NextPage = () => {
         </span>
         <span className="flex flex-row-reverse smx:flex-row smx:mt-2 items-center">
           <button
-            onClick={() => print("Nam_Resume")}
+            onClick={() => print("Nam_Resume.pdf")}
             className="btn-shadow dark:btn-shadow-dark rounded-full text-center w-12 h-12"
           >
             <i
