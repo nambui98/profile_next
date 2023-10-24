@@ -8,29 +8,31 @@ type item = {
 }
 const Skills = (props: Props) => {
     const data: item[] = [
+         {
+            title: "Reactjs",
+            link: "",
+
+            image: "/assets/img/reactjs.png"
+        },
+         {
+            title: "Nextjs",
+            link: "",
+            image: "/assets/img/nextjs.png"
+        },
         {
             title: "Flutter",
             link: "",
             image: "/assets/img/flutter.png"
         },
 
-        {
-            title: "Reactjs",
-            link: "",
-
-            image: "/assets/img/reactjs.png"
-        },
+       
         {
             title: "React Native",
             link: "",
             image: "/assets/img/react-native.png"
         },
 
-        {
-            title: "Nextjs",
-            link: "",
-            image: "/assets/img/nextjs.png"
-        },
+       
         {
             title: "Tailwind",
             link: "",
