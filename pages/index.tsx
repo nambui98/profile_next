@@ -88,7 +88,7 @@ const Home: NextPage = () => {
       <div className="absolute bottom-10 2xl:right-20 2xl:left-20 md:right-10 md:left-10 flex items-center smx:flex-col smx:items-start justify-between">
         <span className="flex items-center ">
           <a
-            href="/Nam_Resume.pdf"
+            href="/nam-resume.pdf"
             className="btn-shadow dark:btn-shadow-dark rounded-full text-center w-12 h-12"
           >
             <i
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
         </span>
         <span className="flex flex-row-reverse smx:flex-row smx:mt-2 items-center">
           <button
-            onClick={() => print("Nam_Resume.pdf")}
+            onClick={() => print("nam-resume.pdf")}
             className="btn-shadow dark:btn-shadow-dark rounded-full text-center w-12 h-12"
           >
             <i
