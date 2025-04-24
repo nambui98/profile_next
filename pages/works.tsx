@@ -18,17 +18,22 @@ const Home: NextPage = () => {
   const { t } = useTranslation("common");
   const data: item[] = [
     {
+      title:"Zapptrue",
+      link:"https://www.zapptrue.com/",
+      image: ""
+    },
+    {
       title: "WalletPort",
-      link: "#",
+      link: "https://www.walletport.xyz/",
       image: "/assets/img/walletport.png",
     },
     {
       title: "FluidAI",
-      link: "#",
+      link: "http://www.fluidai.com/",
       image: "/assets/img/fluidAi-2.png",
     },
     {
-      title: "WalletPort Mobile",
+      title: "WalletPort Mobile App",
       link: "#",
       image: "/assets/img/walletport-mb.jpg",
       type: "mobile",
