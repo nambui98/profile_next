@@ -42,7 +42,6 @@ const Home: NextPage = () => {
       description: "A wedding planning platform that helps couples manage their wedding preparations and connect with vendors.",
       techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Supabase", "Supabase Auth", "Next-intl"],
     },
-    
     {
       title: "Zapptrue",
       link: "https://www.zapptrue.com/",
