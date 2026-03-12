@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Setup
 
-**Node version is pinned to 16** — newer versions cause dependency crashes. Always run:
+**Node version is pinned to 20**. Always run:
 ```bash
 nvm use
 ```
