@@ -1,16 +1,7 @@
 import type { NextPage } from "next";
 import useTranslation from "next-translate/useTranslation";
-import Head from "next/head";
 import { useState } from "react";
 import WorkDialog, { WorkItem } from "../components/WorkDialog";
-import Image from "next/image";
-const routes = [
-  { path: "*", name: "Home" },
-  { path: "/", name: "Home" },
-  { path: "/contact", name: "Contact" },
-  { path: "/work", name: "Work" },
-  { path: "/skills", name: "Skills" },
-];
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -28,234 +19,280 @@ const Home: NextPage = () => {
   };
 
   const data: WorkItem[] = [
-{
-      title: "Arda",
-      link: "#",
-      image: "/assets/img/arda.png",
-      description: "Arda network blockchain",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Nestjs", "Cognito", "Onfido", "Aws"],
+    // --- Nami Innovation (Sep 2025 - Now) ---
+    {
+      title: "Hakifi",
+      link: "https://hakifi.xyz",
+      image: "/assets/img/hakifi.png",
+      description:
+        "Decentralized perpetual trading platform with real-time orderbook, Hyperliquid WebSocket integration, and leveraged smart contract trading.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Viem",
+        "Wagmi",
+        "Hyperliquid SDK",
+        "TanStack Query",
+        "Tailwind CSS",
+        "TradingView",
+      ],
     },
+    {
+      title: "SciLabs",
+      link: "https://scilabs.io",
+      image: "/assets/img/scilabs.png",
+      description:
+        "High-performance landing pages and platform interfaces for scientific ecosystems, optimized with server components, caching, and GSAP animations.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Server Components",
+      ],
+    },
+    // --- Quorumex ---
+    {
+      title: "Caps",
+      link: "https://app.capsl.london",
+      image: "/assets/img/caps.png",
+      description:
+        "Lead Full-stack: end-to-end Monorepo (Web + API + DB). NestJS backend with PostgreSQL/Drizzle ORM; integrated Veriff/Onfido KYC, Bluechain payments, and Enigio digital documents.",
+      techStack: [
+        "Next.js",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Turborepo",
+        "Veriff",
+        "Onfido",
+        "Bluechain",
+      ],
+    },
+    // --- Personal Projects ---
     {
       title: "Wedflip",
       link: "https://www.wedflip.com/",
-      image: "/assets/img/wedflip.png",
-      description: "A wedding planning platform that helps couples manage their wedding preparations and connect with vendors.",
-      techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Supabase", "Supabase Auth", "Next-intl"],
+      image: "/assets/img/wedflip2.png",
+      description:
+        "Schema-driven wedding website builder: users fill data schemas to auto-render high-quality templates. Background jobs via Inngest/Redis; VPS deployed with Docker Compose and Caddy.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Supabase",
+        "Inngest",
+        "Redis",
+        "Docker",
+        "Caddy",
+      ],
     },
     {
       title: "Zapptrue",
       link: "https://www.zapptrue.com/",
       image: "/assets/img/zapptrue.png",
-      description: "A digital service platform focused on providing innovative solutions for businesses.",
-      techStack: ["React", "Next.js", "Typescript", "Tailwind CSS", "Supabase", "Clerk", "Cloudinary", "Node.js"],
+      description:
+        "Personalized apparel platform with custom CMS, product configurator, and Cloudinary image pipeline.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "Supabase",
+        "Clerk",
+        "Cloudinary",
+        "Node.js",
+      ],
     },
+    // --- FPT Software (Nov 2023 - Sep 2025) ---
     {
       title: "WalletPort",
       link: "https://www.walletport.xyz/",
       image: "/assets/img/walletport.png",
-      description: "A cryptocurrency wallet management platform with security features and portfolio tracking.",
-      techStack: ["Nextjs", "Wagmi", "Viem", "Rainbowkit", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      description:
+        "Multi-chain wallet management platform with portfolio tracking, transaction history, and on-chain data visualization.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Wagmi",
+        "Viem",
+        "RainbowKit",
+        "Tailwind CSS",
+        "shadcn/ui",
+      ],
+    },
+    {
+      title: "WalletPort Mobile",
+      link: "#",
+      image: "/assets/img/walletport-mb.jpg",
+      type: "mobile",
+      description:
+        "Flutter mobile app for WalletPort — multi-chain wallet, in-app Web3 transactions, and portfolio tracking.",
+      techStack: ["Flutter", "Dart", "Web3dart", "BLoC"],
     },
     {
       title: "FluidAI",
       link: "http://www.fluidai.com/",
       image: "/assets/img/fluidAi-2.png",
-      description: "An AI-powered platform that provides intelligent automation solutions for businesses.",
-      techStack: ["Nextjs", "Wagmi", "Viem", "Typescript", "Tailwind CSS", "Shadcn/ui", "Cognito", "Aws", "Onfido"],
-    },
-    {
-      title: "WalletPort Mobile App",
-      link: "#",
-      image: "/assets/img/walletport-mb.jpg",
-      type: "mobile",
-      description: "Mobile application version of WalletPort with enhanced features for on-the-go cryptocurrency management.",
-      techStack: ["Flutter", "Flutter web3", "Provider", "Dart"],
+      description:
+        "AI-based trading platform with real-estate tokenization; integrated smart contracts and KYC flows.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Wagmi",
+        "Viem",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Cognito",
+        "Onfido",
+        "AWS",
+      ],
     },
     {
       title: "FluidAI Mobile",
       link: "#",
       image: "/assets/img/fluidAi-mb.jpg",
       type: "mobile",
-      description: "Mobile application for FluidAI platform, providing AI capabilities on mobile devices.",
-      techStack: ["Flutter", "Flutter web3", "Provider", "Dart", "Cognito", "Aws", "Onfido"],
+      description:
+        "Mobile app for FluidAI — AI-powered investment platform with blockchain wallet and KYC.",
+      techStack: ["Flutter", "Dart", "Web3dart", "BLoC", "Cognito", "Onfido"],
+    },
+    // --- Versehub (Apr 2022 - Nov 2023) ---
+    {
+      title: "beFITTER App",
+      link: "https://play.google.com/store/apps/details?id=io.befitter.app&hl=en",
+      image: "/assets/img/befitter_app.jpg",
+      type: "mobile",
+      description:
+        "Move-to-earn fitness dApp with 100K+ downloads. In-app blockchain wallet for NFT/token management and signed transactions.",
+      techStack: ["Flutter", "Dart", "BLoC", "Web3dart"],
+    },
+    {
+      title: "beFITTER Website",
+      link: "https://befitter.io/",
+      image: "/assets/img/befitter.png",
+      description:
+        "Marketing and platform website for the beFITTER move-to-earn fitness ecosystem.",
+      techStack: ["Next.js", "TypeScript", "Material UI", "Ethers.js"],
+    },
+    {
+      title: "DSTAX",
+      link: "https://dtax.vercel.app/",
+      image: "/assets/img/dstax.png",
+      description:
+        "Real estate tokenization and digital asset tax management platform with smart contract integrations.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Redux Toolkit",
+        "RTK Query",
+        "Wagmi",
+        "Ethers.js",
+      ],
+    },
+    {
+      title: "VerseHub Bridge",
+      link: "https://bridge.versehub.io/",
+      image: "/assets/img/versehubbridge.png",
+      description:
+        "Cross-chain bridge for asset transfers between blockchain networks with custom Indexer Service for real-time event sync.",
+      techStack: ["React", "TypeScript", "Ethers.js", "Solidity", "Node.js"],
     },
     {
       title: "DeODD",
       link: "https://deodd.io",
       image: "/assets/img/deodd.png",
-      description: "A decentralized betting platform operating on blockchain technology.",
-      techStack: ["Nextjs", "Typescript", "Material UI", "Ethers.js", "ChainLink"],
+      description:
+        "Decentralized betting platform on blockchain with Chainlink oracle integration.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Material UI",
+        "Ethers.js",
+        "ChainLink",
+      ],
     },
+    // --- Legacy (VTC Online & TSP Software, Oct 2018 - Apr 2022) ---
     {
-      title: "ChipTracker",
-      link: "https://chiptracker.net",
-      image: "/assets/img/chiptracker.png",
-      description: "A tracker for poker chips and tournament management in poker games.",
-      techStack: ["Nextjs", "Typescript", "Tailwind CSS", "Shadcn/ui", "Planetscale"],
-    },
-    {
-      title: "Dstax",
-      link: "https://dtax.vercel.app/",
-      image: "/assets/img/dstax.png",
-      description: "A tax management solution for digital assets and cryptocurrencies.",
-      techStack: ["Nextjs", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Redux-toolkit", "Redux-toolkit-query", "Redux-persist"],
-    },
-    {
-      title: "Arbix",
-      link: "#",
-      image: "/assets/img/app3.png",
-      description: "A platform for cryptocurrency arbitrage trading across different exchanges.",
-      techStack: ["Nextjs", "Typescript", "Tailwind CSS", "Shadcn/ui", "Ton network", "Telegram bot", "Spine animation", "Zustand"],
-    },
-    {
-      title: "Befitter app",
-      link: "https://play.google.com/store/apps/details?id=io.befitter.app&hl=en",
-      image: "/assets/img/befitter_app.jpg",
-      type: "mobile",
-      description: "A fitness mobile application that tracks user activities and provides personalized fitness plans.",
-      techStack: ["Flutter", "Dart", "Flutter web3", "Provider"],
-    },
-    {
-      title: "Music app",
-      link: "https://play.google.com/store/apps/details?id=com.tsp.sound2relax&hl=en",
-      image: "/assets/img/music_app.jpg",
-      type: "mobile",
-      description: "A music streaming and relaxation app with curated playlists for relaxation and focus.",
-      techStack: ["Flutter", "Dart", "Audio player", "Audio background"],
-    },
-    {
-      title: "Befitter website",
-      link: "https://befitter.io/",
-      image: "/assets/img/befitter.png",
-      description: "The website for the Befitter fitness platform, providing information about its services and features.",
-      techStack: ["React", "Next.js", "TypeScript", "Material UI", "Ethers.js"],
-    },
-    {
-      title: "Nextverse",
-      link: "https://nextverse.org/",
-      image: "/assets/img/nextverse.png",
-      description: "A metaverse platform connecting digital experiences across various virtual environments.",
-      techStack: ["Nextjs", "Typescript", "Tailwind CSS", "Shadcn/ui"],
-    },
-    {
-      title: "Quorumex",
-      link: "https://quorumex-web.vercel.app/",
-      image: "/assets/img/quorumex.png",
-      description: "A decentralized governance platform for DAOs and digital communities.",
-      techStack: ["React", "Solidity", "Web3.js", "TypeScript"],
-    },
-    {
-      title: "VerseHub bridge",
-      link: "https://bridge.versehub.io/",
-      image: "/assets/img/versehubbridge.png",
-      description: "A cross-chain bridge allowing for asset transfers between different blockchain networks.",
-      techStack: ["React", "Solidity", "Ethers.js", "Node.js"],
-    },
-    {
-      title: "Penpal",
-      link: "https://www.penpalnft.com/",
-      image: "/assets/img/penpal.png",
-      description: "An NFT platform connecting creators and collectors through digital art ownership.",
-      techStack: ["React", "Next.js", "Tailwind CSS", "Shadcn/ui"],
-    },
-    {
-      title: "Iok chương trình thi topik online",
+      title: "IOK — TOPIK Online",
       link: "https://iok.vn",
       image: "/assets/img/iok.png",
-      description: "An online platform for Korean language TOPIK test preparation and practice.",
-      techStack: ["Reactjs", "Material UI", "Redux-toolkit", "Redux-toolkit-query", "Redux-persist"],
+      description:
+        "Interactive Korean language TOPIK exam preparation platform with quiz engine and progress tracking.",
+      techStack: [
+        "React",
+        "TypeScript",
+        "Material UI",
+        "Redux Toolkit",
+        "RTK Query",
+      ],
     },
     {
-      title: "Dự án ERP",
-      link: "http://172.105.120.33:6004/",
-      image: "/assets/img/bavinn.png",
-      description: "An Enterprise Resource Planning system for business management and operations.",
-      techStack: ["React", "Ant Design", "Redux", "Redux-saga"],
-    },
-    {
-      title: "Làm phần CMS cho webside đặt vé máy bay",
+      title: "Vietravel Airlines CMS",
       link: "https://www.vietravelairlines.com/vn/vi",
       image: "/assets/img/vtva.png",
-      description: "A Content Management System for an airline ticket booking website.",
-      techStack: ["React", "Ant Design", "Redux", "Redux-saga", "React-intl"],
+      description:
+        "Content Management System for Vietravel Airlines' flight booking website with multilingual support.",
+      techStack: ["React", "Ant Design", "Redux", "Redux-Saga", "React-intl"],
     },
     {
-      title: "FE NFT design trên figma",
-      link: "https://nft-flame-phi.vercel.app/",
-      image: "/assets/img/nft.png",
-      description: "A frontend implementation of NFT marketplace design created in Figma.",
-      techStack: ["React", "Next.js", "Tailwind CSS"],
-    },
-    {
-      title: "Làm thử đồng coin",
-      link: "https://namcoin.vercel.app/",
-      image: "/assets/img/coin2.png",
-      description: "A cryptocurrency project showcasing a custom token implementation.",
-      techStack: ["Nextjs", "Solidity", "Web3.js", "Hardhat"],
-    },
-    {
-      title: "Trang portfolio cá nhân",
-      link: "https://namportfolio.netlify.app/",
-      image: "/assets/img/portpolio.png",
-      description: "A personal portfolio website showcasing skills, projects, and professional experience.",
-      techStack: ["React", "JavaScript", "CSS", "HTML"],
-    },
-    {
-      title: "Tran paralax design trên figma",
-      link: "https://parallaxnambv.netlify.app/",
-      image: "/assets/img/paralax.png",
-      description: "A parallax scrolling website implementation based on a Figma design.",
-      techStack: ["JavaScript", "HTML", "CSS", "GSAP"],
+      title: "Baviin ERP",
+      link: "#",
+      image: "/assets/img/bavinn.png",
+      description:
+        "Enterprise Resource Planning system for business management, logistics, and operations.",
+      techStack: ["React", "Ant Design", "Redux", "Redux-Saga"],
     },
   ];
   return (
-    <div className=" rounded-3xl bg-app dark:bg-neutral-800 shadow-3xl dark:shadow-3xl-dark relative w-full h-full p-6">
-      <Head>
-        <title>Profile NamBv</title>
-      </Head>
-
-      <p className="text-black dark:text-white text-xl text-left font-bold mb-2">
+    <div className="rounded-3xl bg-app dark:bg-neutral-800 shadow-3xl dark:shadow-3xl-dark relative w-full h-full p-2">
+      <p className=" px-4 pt-4 text-black dark:text-white text-xl text-left font-bold">
         {t("works")}
       </p>
-      {/* <img className="w-full" src={IOK} alt="Sunset in the mountains" /> */}
-      <div className="w-full h-[calc(100%_-_40px)] overflow-y-auto flex justify-between flex-wrap scrollbar">
+      <div className="w-full h-[calc(100%_-_56px)] p-4 overflow-y-auto grid md:grid-cols-2 gap-3 scrollbar">
         {data.map((item, index) => (
           <div
             key={index}
             onClick={(e) => handleWorkClick(item, e)}
-            className="border lg:w-[calc(50%_-_10px)] overflow-hidden w-full mb-5 dark:border-dark h-[240px] transition-all duration-300 cursor-pointer  relative group"
+            className="work-card w-full aspect-video rounded-2xl cursor-pointer group"
           >
-            <div className={`w-[calc(100%_-_20px)] h-[calc(100%_-_20px)] relative ${
-                item.type === "mobile" ? "!object-contain" : ""
-              }`}>
-            <Image
-              loading="lazy"
-              decoding="async"
-layout="fill"
-objectFit="cover"
-objectPosition={'top'}
-              // className={`w-[calc(100%_-_20px)] h-[calc(100%_-_20px)] ${
-              //   item.type === "mobile" ? "!object-contain" : ""
-              // }`}
-              src={item.image}
-              alt={item.title}
-            />
- 
-            </div>
-           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center">
-              <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-center p-4">
-                <h3 className="font-bold text-lg">{item.title}</h3>
-                <p className="text-sm mt-1">Click to view details</p>
+            {/* Inset image recess — the "screen in the bezel" */}
+            <div className="work-card-img">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                loading="lazy"
+                src={item.image}
+                alt={item.title}
+                className={`w-full h-full transition-transform duration-300 group-hover:scale-105 ${item.type === "mobile" ? "object-contain p-3" : "object-cover object-top"}`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-start justify-end p-3">
+                <h3 className="font-bold text-white text-sm leading-tight">
+                  {item.title}
+                </h3>
+                <p
+                  className="text-gray-300 text-xs mt-0.5 overflow-hidden"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 1,
+                    WebkitBoxOrient: "vertical",
+                  }}
+                >
+                  {item.description}
+                </p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <WorkDialog 
-        isOpen={dialogOpen} 
-        onClose={closeDialog} 
-        work={selectedWork} 
+      <WorkDialog
+        isOpen={dialogOpen}
+        onClose={closeDialog}
+        work={selectedWork}
       />
     </div>
   );

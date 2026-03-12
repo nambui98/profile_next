@@ -2,9 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+This project is pinned to **Node.js 16** (see `.nvmrc`). If you're on a newer Node (e.g. Node 25), `next dev` may crash due to dependency incompatibilities.
+
 First, run the development server:
 
 ```bash
+nvm use   # if you use nvm
 npm run dev
 # or
 yarn dev

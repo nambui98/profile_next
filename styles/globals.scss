@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -196,7 +195,122 @@ i{
         
 
     }
-    .btn-shadow{
+    // Nav link states — dark mode handled via .dark parent (Tailwind class strategy)
+.nav-link-active {
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px -3px 3px #fafafa;
+    color: var(--color);
+    i { color: var(--color); }
+}
+.dark .nav-link-active {
+    box-shadow: inset 3px 3px 3px #202020, inset -3px -3px 3px #2c2c2c;
+}
+.nav-link-inactive {
+    box-shadow: 3px 3px 3px #cbced1, -3px -3px 3px #fafafa;
+    color: #4b5563;
+    i { color: inherit; }
+}
+.dark .nav-link-inactive {
+    box-shadow: 3px 3px 3px #202020, -3px -3px 3px #2c2c2c;
+    color: #fff;
+}
+// Work dialog popup — high-elevation neumorphic modal
+.work-dialog {
+    background: #ecf0f3;
+    box-shadow:
+        15px 15px 35px #b2b6bb,
+        -15px -15px 35px #ffffff;
+}
+.dark .work-dialog {
+    background: #262626;
+    box-shadow:
+        15px 15px 35px #1a1a1a,
+        -15px -15px 35px #333333;
+}
+// Image area inside the dialog — inset recess (bezel + screen)
+.work-dialog-img {
+    margin: 12px 12px 0 12px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: inset 3px 3px 8px #b2b6bb, inset -3px -3px 8px #ffffff;
+}
+.dark .work-dialog-img {
+    box-shadow: inset 3px 3px 8px #1a1a1a, inset -3px -3px 8px #333333;
+}
+// ─── Neumorphic depth system ──────────────────────────────────
+// Light source: top-left. Shadows: dark=#b2b6bb, highlight=#ffffff
+// Depth levels: page surface → raised card → inset well → raised chip
+
+// Skill category: INSET WELL (pressed into the raised page panel)
+.skill-cat-card {
+    background: #ecf0f3;
+    box-shadow: inset 4px 4px 8px #b2b6bb, inset -4px -4px 8px #ffffff;
+}
+.dark .skill-cat-card {
+    background: #262626;
+    box-shadow: inset 4px 4px 8px #1a1a1a, inset -4px -4px 8px #333333;
+}
+// Skill category icon — RAISED badge floating in the well
+.skill-cat-icon {
+    background: #ecf0f3;
+    box-shadow: 3px 3px 6px #b2b6bb, -3px -3px 6px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.dark .skill-cat-icon {
+    background: #262626;
+    box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #333333;
+}
+// Skill chip — RAISED within the well, pressed on hover
+.skill-chip {
+    display: inline-block;
+    background: #ecf0f3;
+    box-shadow: 2px 2px 5px #b2b6bb, -2px -2px 5px #ffffff;
+    transition: box-shadow 0.15s ease;
+    cursor: default;
+    &:hover {
+        box-shadow: inset 2px 2px 4px #b2b6bb, inset -2px -2px 4px #ffffff;
+    }
+}
+.dark .skill-chip {
+    background: #262626;
+    box-shadow: 2px 2px 5px #1a1a1a, -2px -2px 5px #333333;
+    &:hover {
+        box-shadow: inset 2px 2px 4px #1a1a1a, inset -2px -2px 4px #333333;
+    }
+}
+// Work card — RAISED frame (like a bezel) with padding
+.work-card {
+    background: #ecf0f3;
+    padding: 8px;
+    box-shadow: 5px 5px 10px #b2b6bb, -5px -5px 10px #ffffff;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    &:hover {
+        box-shadow: 7px 7px 14px #b2b6bb, -7px -7px 14px #ffffff;
+        transform: translateY(-3px);
+    }
+}
+.dark .work-card {
+    background: #262626;
+    box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #333333;
+    &:hover {
+        box-shadow: 7px 7px 14px #1a1a1a, -7px -7px 14px #333333;
+    }
+}
+// Work card image — INSET recess (the "screen" inside the bezel)
+.work-card-img {
+    box-shadow: inset 2px 2px 6px #b2b6bb, inset -2px -2px 6px #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.dark .work-card-img {
+    box-shadow: inset 2px 2px 6px #1a1a1a, inset -2px -2px 6px #333333;
+}
+.btn-shadow{
     box-shadow: 3px 3px 3px #cbced1,
             -3px -3px 3px #fafafa;
     // width: 50px;
@@ -525,46 +639,6 @@ i{
  box-shadow: inset 4px 4px 12px #c5c5c5,
              inset -4px -4px 12px #fafafa;
                 }
-}
-// .fade-enter {
-//   opacity: 0;
-//   z-index: 1;
-// }
-
-// .fade-enter.fade-enter-active {
-//   opacity: 1;
-//   transition: opacity 250ms ease-in;
-// }
-
-.fade-enter {
-  opacity: 0;
-//   transform-style: preserve-3d;
-//   transform: translate(-100%, 0) scale(0) ;
-    //  transform-origin: left;
-
-    // transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(.5);
-    transform: translateX(-100%);
-    z-index: 1;
-}
-.fade-enter.fade-enter-active {
-  opacity: 1;
-   transform-origin: left;
-  transform: translate(0, 0);
-    // transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(.5);
-
-  transition: opacity 400ms ease-in-out, transform 500ms ease-in-out;
-}
-.fade-exit {
-    position: absolute;
-  opacity: 1;
-//   transform: translateX(-100%);
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-//   transform: translate(0, 30px);
-  display: none;
-
-  transition: all 250ms ease-out, transform 300ms ease;
 }
 // .cursor{
 //     position: absolute;
